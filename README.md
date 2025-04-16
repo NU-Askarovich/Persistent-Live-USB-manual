@@ -6,11 +6,10 @@
 
 ## ⚠️ Warning
 
-You may encounter problems when following the instructions.
+You may encounter problems when following the instructions. Please understand that things may look different on different devices from different manufacturers, so use ChatGPT and other tools to solve unexpected problems.
+Also, before taking action, please read the instructions first!
+![image](https://github.com/user-attachments/assets/32837245-a125-4a25-8550-f24c30ed75a2)
 
-- The appearance of menus or BIOS options **may vary by manufacturer**.
-- Always **read instructions carefully before acting**.
-- If unexpected issues occur, consult **ChatGPT** or other online communities to troubleshoot.
 
 ---
 
