@@ -35,10 +35,6 @@ There are several ways to run Ubuntu:
 
 But this tutorial teaches you how to create a **Persistent Live USB**.
 
----
-
-## 2️⃣ Why Persistent Live USB?
-
 With a Persistent Live USB:
 
 - Ubuntu is **stored on your flash drive**
