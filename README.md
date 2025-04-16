@@ -1,4 +1,4 @@
-# 🐧 How to Create a Persistent Live USB (Ubuntu)
+#  How to Create a Persistent Live USB (Ubuntu)
 
 > This is a short manual on how to set up a **Persistent Live USB**, allowing you to run Ubuntu with saved files and settings on any device — portable and powerful.
 
@@ -41,8 +41,6 @@ With a Persistent Live USB:
 - You can **work on any device**, keeping files, programs, and settings
 - You are **not dependent on any specific computer**
 - It works **like a mini portable Linux system**
-
----
 
 ### 🆚 Comparison: Bootable USB vs Persistent Live USB
 
