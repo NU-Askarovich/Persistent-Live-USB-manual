@@ -14,14 +14,13 @@ Also, before taking action, please read the instructions first!
 
 ## 📚 Structure of the Manual
 
-- Why Persistent Live USB?  
-- Hardware required  
-- Formatting and writing ISO to a flash drive using Rufus  
-- Ubuntu installation on second flash drive  
-- RST turning off  
-- Checking Ubuntu for functionality  
-- How to return to Windows OS again?  
-- End  
+- 1️⃣ Why Persistent Live USB?  
+- 2️⃣ Hardware required  
+- 3️⃣ Formatting and writing ISO to a flash drive using Rufus  
+- 4️⃣ Ubuntu installation on second flash drive  
+- 5️⃣ RST turning off  
+- 6️⃣ Checking Ubuntu for functionality  
+- 7️⃣ How to return to Windows OS again?  
 
 ---
 
@@ -42,16 +41,56 @@ With a Persistent Live USB:
 - You are **not dependent on any specific computer**
 - It works **like a mini portable Linux system**
 
-### 🆚 Comparison: Bootable USB vs Persistent Live USB
+## Comparison: Bootable Flash vs Persistent USB
 
-| Feature | Bootable USB | Persistent Live USB |
-|--------|---------------|---------------------|
-| Saves files? | ❌ No | ✅ Yes |
-| Saves settings? | ❌ No | ✅ Yes |
-| Easy to set up | ✅ Yes | ❌ No |
-| Works on any PC | ✅ Yes | ✅ Yes |
+| Property                | Bootable Flash | Persistent USB |
+|------------------------|----------------|----------------|
+| Saves data             | ❌ No          | ✅ Yes         |
+| Can install programs   | ❌ No          | ✅ Yes         |
+| Used for installation  | ✅ Yes         | ✅ Yes         |
+| Suitable for daily use | ❌ No          | ✅ Yes         |
+| Resource usage         | 🟢 Low         | 🟡 Medium      |
+
 
 As you can see, **Persistent Live USB is more powerful**, but it requires more time and effort to configure.
 
 ---
+## 2️⃣ Hardware Required
+
+To create a Persistent Live USB, you'll need:
+
+### 🔧 Basic Requirements:
+- **First flash memory** — For the Ubuntu ISO file (used only for installation).
+- **Second flash memory** — For installing and running Ubuntu itself.
+- **Laptop or PC** — Any device that supports booting from USB.
+
+---
+
+### 🧪 Example Configuration Used:
+
+- **First Flash Memory:**  
+  USB 2.0, 64GB, Apacer AH333 (can be even 16 GB, just enough for ISO file)
+
+- **Second Flash Memory:**  
+  64GB Kingston DataTraveler Exodia M, USB 3.2
+
+- **Laptop:**  
+  Acer Aspire 7, Core i7, 9th Gen  
+
+---
+
+### ⚠️ Important Recommendations:
+
+- **Empty Drives:**  
+  Make sure both flash drives are empty — all data will be erased.
+
+- **USB Speed Matters:**  
+  Use USB 3.0 or higher for the **second** flash drive (Ubuntu itself) to ensure fast installation and usage.
+
+- **Storage Size:**  
+  Avoid using flash drives below 32 GB — it will cause issues with saving files.  
+  **Recommended size: 64 GB**
+
+- **Durability Note:**  
+  Running Ubuntu directly from a flash drive causes heat, which can reduce the flash drive’s lifespan.
 
