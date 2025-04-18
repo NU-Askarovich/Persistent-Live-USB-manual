@@ -155,15 +155,18 @@ Please be patient as this is the longest and most complicated part of the manual
  **Step 3)** When Boot menu is opened you can see several options. Please select your flash memory with ISO file of Ubuntu  
 (in my case it was called just “Ubuntu”).  
 
-
+![Rufus Interface](images/slide14(1).png)
 
 After this you will see GRUB menu like this and select first option – Ubuntu.
 
  **Step 4)** When you clicked on your Ubuntu you will see this screen and please select “Try Ubuntu” option.
 
----
+ ![Rufus Interface](images/slide14(2).png)
 
  **Step 5)** After you selected “Try Ubuntu” option you will see next screen (it is desktop).  
+
+ ![Rufus Interface](images/slide15.png)
+ 
  **Step 6)** Verify if laptop sees second flash drive (where we are going to install Ubuntu).  
 
 For this purpose, find "Disks" (search via "Activities" → type Disks).  
@@ -179,11 +182,16 @@ There should be:
 - Keyboard layout  
 - Connect Wi-Fi if you want.  
 
-If after Wi-Fi connection you see this (image on the right), please look at section called “RST turning off”.  
+If after Wi-Fi connection you see this (image below), please look at section called “RST turning off”.  
 If not, please continue following instructions.
+
+ ![Rufus Interface](images/slide16.png)
 
 ---
 
- **Step 8)** After you set up Wi-Fi settings you will see this screen (image on the right).  
+ **Step 8)** After you set up Wi-Fi settings you will see this screen (image below).  
+
+ ![Rufus Interface](images/slide16.png)
+ 
 I chose normal installation with downloading updates.  
 Click “Continue” after selecting suitable for you options.
