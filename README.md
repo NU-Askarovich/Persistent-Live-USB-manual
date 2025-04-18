@@ -175,8 +175,6 @@ There should be:
 - USB stick with ISO image (first flash drive)  
 - Your second flash drive (in my case 64GB Kingston) ← that's where we'll install Ubuntu.
 
----
-
  **Step 7)** Return to desktop. Click “Install Ubuntu 20.04 LTS” and in following windows choose next parameters:  
 - Language — English  
 - Keyboard layout  
@@ -187,11 +185,18 @@ If not, please continue following instructions.
 
  ![Rufus Interface](images/slide16.png)
 
----
-
  **Step 8)** After you set up Wi-Fi settings you will see this screen (image below).  
 
- ![Rufus Interface](images/slide16.png)
+ ![Rufus Interface](images/slide17(1).png)
  
 I chose normal installation with downloading updates.  
 Click “Continue” after selecting suitable for you options.
+
+
+ **Step 9)** After step 8 you will see this IMPORTANT screen. Please choose option “Something else”. If you chose “Erase disk and install Ubuntu” it will delete Windows OS! Be careful in this step
+
+  ![Rufus Interface](images/slide17(2).png)
+
+
+
+
