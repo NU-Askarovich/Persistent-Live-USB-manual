@@ -197,6 +197,192 @@ Click “Continue” after selecting suitable for you options.
 
   ![Rufus Interface](images/slide17(2).png)
 
+  **Step 10)** We clicked on “Something else” because we want to allocate memory on  second flash memory for correct working. After selecting “Something else” you will see this!
+
+  ![Rufus Interface](images/slide18.png)
+  
+In “Device for boot installation” please select your second flash drive. In my case my flash drive Kingston 64GB is /dev/sdb. Also, you can understand if this is your flash drive by looking at memory capacity. If your memory stick is 64 GB, then in this menu you will see 61991 MB (nearly 64 GB).
+
+**Step 11)** Choose string /dev/sdb  fat32 and press minus sign “-” to delete
+
+**Step 12)** After deleting there will be "free space" under /dev/sdb
+
+**Step 13)** Press on "free space" under /dev/sdb and click plus sign “+”
+
+  ![Rufus Interface](images/slide19.png)
+
+  After you pressed “+” this window appears
+
+  Choose settings like in image except memory capacity. You can have capacity more or less than my, so consider this fact and write your own. In mount point always choose “\” option. Click OK after finishing.
+
+  **Step 14)** Now let’s create place for swap. Under /dev/sdb1 you can find another “free space” string. Press on it and set up parameters like in image:
+
+  ![Rufus Interface](images/slide20.png)
+
+Again, memory capacity may differ, in my case it is 2000 MB.
+Then press “OK” if everything is done.
+
+**Step 15)** After you have done allocating memory, you can check your settings (image below) before approving allocation:
+
+![Rufus Interface](images/slide21(1).png)
+
+If everything is OK, press “Install now”
+
+**Step 16)** After you pressed “Install now”, you see final window. You see how much memory you allocated for Ubuntu. Click “Continue” if you agree:
+
+![Rufus Interface](images/slide21(2).png)
+
+**Step 17)** After you clicked “Continue” it will ask your time zone. Please select your time zone. In my case I chose Almaty.
+
+![Rufus Interface](images/slide22(1).png)
+
+**Step 18)** Choose name, password and don’t forget them. Go “Continue” after you wrote down name and password. 
+
+![Rufus Interface](images/slide22(2).png)
+
+**Step 19)** After all was set up you will see screen of installation:
+
+![Rufus Interface](images/slide23.png)
+
+This process can require time for installing (from 15 minutes to 1 hour). If generation of USB flash drive is newest, if internet speed is high - installing can be much faster.
+
+**Step 20)** After installation complete next window can appear:
+
+![Rufus Interface](images/slide24(1).png)
+
+Please, press “Restart now”.
+
+**Step 21)** After restarting, you will see this image. It means remove two flash drives and press Enter button. Then insert second flash drive (with installed Ubuntu) again.
+
+![Rufus Interface](images/slide24(2).png)
+
+**Step 22)** After pressing Enter you will see GRUB menu:
+
+![Rufus Interface](images/slide25.png)
+
+Select Ubuntu. It is your Ubuntu installed to your second flash memory stick. 
+
+
+✅ Installation has been completed!
+
+
+---
+
+## 5️⃣ RST turning off
+
+Small explanation
+
+Why this error appears?
+
+Ubuntu cannot detect your internal storage devices properly when RST is enabled, because RST uses a RAID-like configuration that Linux doesn’t support out of the box. This causes Ubuntu installer to fail in accessing drives or show errors like “no storage device found” or block the installation steps.
+
+Disabling RST (by switching SATA mode to AHCI) fixes this by allowing Ubuntu to interact with drives in a standard-compatible way.
+
+**Step 1)** Please click “quit” (not restart) like in image:
+
+![Rufus Interface](images/slide27(1).png)
+
+**Step 2)** Turn off your laptop (PC)
+**Step 3)** Open BIOS (press F2 during power-up)
+**Step 4)** You will see information string like this (image below):
+
+![Rufus Interface](images/slide27(2).png)
+
+
+**Step 5)** Using arrows on your keyboard please select “Main”:
+**Step 6)** Press Ctrl + S. This shortcut will reveal hidden parameters like SATA mode. 
+**Step 7)** In SATA mode change "Optane without RAID" to “AHCI”.
+
+✅ Now, you have turned RST mode off. You can continue Ubuntu installation
+
+Return to desktop:
+- Please turn laptop off
+- open BIOS,
+- select Ubuntu, 
+- In GRUB menu select Ubuntu, 
+- click “Try Ubuntu” to see desktop. 
+- Do setting up again (language, keyboard layout, wifi)
+
+---
+
+## 6️⃣ Checking Ubuntu for functionality  
+
+How to verify if my Ubuntu on second flash drive will work properly?
+
+**Method 1**
+
+- Please open “Files”. 
+- Go in folder Documents or Desktop.
+- Create any file (I created .txt file) and save it
+- Turn off laptop
+- Remove flash memory form your laptop
+- Insert flash memory again
+- Launch Ubuntu from GRUM menu.
+- Open “Files” and verify if your created file is there. If yes flash memory with Ubuntu works properly. 
+
+
+**Method 2**
+- Also, you can check flash memory on working capability by connecting to WIFI network. If connects to it properly – your Ubuntu works. 
+
+
+**Method 3**
+- Also, you can check it by updates. Open terminal (Ctrl + Alt + T) and insert: 
+sudo apt update && sudo apt upgrade
+If system is being updated – your Ubuntu works properly.
+
+
+**Method 4**
+- You can download different programs. I successfully installed ROS with Gazebo and launched them. My flash drive worked.
+
+
+---
+
+## 7️⃣ How to return to Windows OS again?  
+
+If you read manual carefully you remember that we changed parameter SATA mode (Intel RST) from "Optane without RAID" to “AHCI”. This causes errors when you want to launch Windows OS again. Please don’t be afraid, this can be easily corrected. 
+
+After you turned laptop off, removed flash memory with Ubuntu and powered it up you can receive this image (Grub rescue mode):
+
+![Rufus Interface](images/slide31.png)
+
+Just open BIOS menu, again find SATA mode option, change from “AHCI” to "Optane without RAID". This will help to load Windows OS properly. Shut down laptop and power it up again. After this you can again face with Grub rescue mode (look at image below):
+
+![Rufus Interface](images/slide32.png)
+
+Again, now you just need to:
+- Turn off your laptop completely (hold the power button).
+- Enter BIOS (on Acer, it's usually F2 during startup).
+- Go to the Boot tab.
+- Make sure Windows Boot Manager is first in the boot order.
+If not — move it to the top using F5/F6.
+- Save changes (F10, then Enter).
+- Restart the laptop — Windows should boot up.
+
+
+✅ This is the end of the instructions!
+
+Made by: Adilet Toleshev, MS Student in Robotics (2025).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
