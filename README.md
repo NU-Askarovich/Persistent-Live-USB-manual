@@ -59,14 +59,14 @@ As you can see, **Persistent Live USB is more powerful**, but it requires more t
 
 To create a Persistent Live USB, you'll need:
 
-### 🔧 Basic Requirements:
+###  Basic Requirements:
 - **First flash memory** — For the Ubuntu ISO file (used only for installation).
 - **Second flash memory** — For installing and running Ubuntu itself.
 - **Laptop or PC** — Any device that supports booting from USB.
 
 ---
 
-### 🧪 Example Configuration Used:
+###  Example Configuration Used:
 
 - **First Flash Memory:**  
   USB 2.0, 64GB, Apacer AH333 (can be even 16 GB, just enough for ISO file)
