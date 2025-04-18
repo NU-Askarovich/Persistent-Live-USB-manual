@@ -96,57 +96,48 @@ To create a Persistent Live USB, you'll need:
 
 ---
 
-## 💾 Formatting and Writing ISO to a Flash Drive Using Rufus
+## 3️⃣ Formatting and Writing ISO to a Flash Drive Using Rufus
 
-This step prepares the **first flash drive** for Ubuntu installation by writing the ISO file onto it.
+First you need to prepare the first flash drive. For this purpose flash drive must be formatted and written with ISO file. You will have to download needed files and software in next steps.
 
 ---
 
 step ① **Insert First Flash Drive**  
 Insert your first flash drive (for ISO only) into a USB port of your laptop or PC.
 
----
-
 step ② **Download Ubuntu ISO**  
 Go to [Ubuntu Releases](https://releases.ubuntu.com/focal/) and download the desired version (e.g., Ubuntu 20.04).
 
----
-
 step ③ **Download Rufus**  
-Go to [Rufus Official Website](https://rufus.ie/ru/) and download the latest version of **Rufus**.
-
----
+Go to [Rufus Official Website](https://rufus.ie/ru/) and download suitable for you version of **Rufus**.
+![Rufus Interface](images/slide10.png)
 
 step ④ **Launch Rufus**  
 Open the Rufus software. You will see a window with device and boot selection options.
+![Rufus Interface](images/slide11.png)
 
----
-
-step ⑤ **Select Your Flash Drive**  
+step ⑤ **Select Your first Flash Drive**  
 In the **Device** field, choose your flash memory (for ISO).
 
----
-
 step ⑥ **Select ISO File**  
-In the **Boot selection** field, choose `Disk or ISO image`, then press `Select` and pick your downloaded ISO file.
+After selecting in “Boot selection” please choose “Disk or ISO” option. 
+
+step ⑦ Press button “Select” and find your ISO file (which you downloaded from website)
 
 ℹ️ Leave other parameters as default unless you know what you're doing.
-
----
 
 ⚠️ **Attention:**  
 **Rufus will format your flash drive completely!**  
 Make sure there are no important files on it.
 
----
+step ⑧ **Click start button**  
+If you are sure click “Start” button. Please, make sure that you have constant power supply because upload interrupt may cause problems. Also, next window can appear and please select ISO image mode: 
 
-step ⑦ **Start the Process**  
-Click `Start`. When a prompt appears, choose **ISO Image Mode**.
+![Rufus Interface](images/slide12(1).png)
 
----
+step ⑨ **Click start button** Wait for nearly 15-20 minutes. After formatting, Rufus will upload your ISO Ubuntu file inside flash memory and you will have this window:
 
-step ⑧ **Wait for Completion**  
-It will take approximately **15–20 minutes**.  
-Once finished, the flash memory will contain the bootable Ubuntu ISO.
+![Rufus Interface](images/slide12(2).png)
+
 
 ✅ First flash drive is now ready!
