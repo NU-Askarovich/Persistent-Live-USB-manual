@@ -94,3 +94,59 @@ To create a Persistent Live USB, you'll need:
 - **Durability Note:**  
   Running Ubuntu directly from a flash drive causes heat, which can reduce the flash drive’s lifespan.
 
+---
+
+## 💾 Formatting and Writing ISO to a Flash Drive Using Rufus
+
+This step prepares the **first flash drive** for Ubuntu installation by writing the ISO file onto it.
+
+---
+
+step ① **Insert First Flash Drive**  
+Insert your first flash drive (for ISO only) into a USB port of your laptop or PC.
+
+---
+
+step ② **Download Ubuntu ISO**  
+Go to [Ubuntu Releases](https://releases.ubuntu.com/focal/) and download the desired version (e.g., Ubuntu 20.04).
+
+---
+
+step ③ **Download Rufus**  
+Go to [Rufus Official Website](https://rufus.ie/ru/) and download the latest version of **Rufus**.
+
+---
+
+step ④ **Launch Rufus**  
+Open the Rufus software. You will see a window with device and boot selection options.
+
+---
+
+step ⑤ **Select Your Flash Drive**  
+In the **Device** field, choose your flash memory (for ISO).
+
+---
+
+step ⑥ **Select ISO File**  
+In the **Boot selection** field, choose `Disk or ISO image`, then press `Select` and pick your downloaded ISO file.
+
+ℹ️ Leave other parameters as default unless you know what you're doing.
+
+---
+
+⚠️ **Attention:**  
+**Rufus will format your flash drive completely!**  
+Make sure there are no important files on it.
+
+---
+
+step ⑦ **Start the Process**  
+Click `Start`. When a prompt appears, choose **ISO Image Mode**.
+
+---
+
+step ⑧ **Wait for Completion**  
+It will take approximately **15–20 minutes**.  
+Once finished, the flash memory will contain the bootable Ubuntu ISO.
+
+✅ First flash drive is now ready!
