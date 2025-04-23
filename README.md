@@ -49,8 +49,6 @@ With a Persistent Live USB:
 | Can install programs   | ❌ No          | ✅ Yes         |
 | Used for installation  | ✅ Yes         | ✅ Yes         |
 | Suitable for daily use | ❌ No          | ✅ Yes         |
-| Resource usage         | 🟢 Low         | 🟡 Medium      |
-
 
 As you can see, **Persistent Live USB is more powerful**, but it requires more time and effort to configure.
 
@@ -59,10 +57,12 @@ As you can see, **Persistent Live USB is more powerful**, but it requires more t
 
 To create a Persistent Live USB, you'll need:
 
-###  Basic Requirements:
-- **First flash memory** — For the Ubuntu ISO file (used only for installation).
-- **Second flash memory** — For installing and running Ubuntu itself.
-- **Laptop or PC** — Any device that supports booting from USB.
+ ###  Hardware Options
+ - **Option A — single-stick setup**  
+   • One USB drive ≥ 32 GB (Rufus/Ventoy can add a persistence partition).  
+ - **Option B — two-stick setup (easier for beginners)**  
+   • *Installer USB* ≥ 8 GB • *Main USB* ≥ 32 GB  
+ - **Any PC/laptop that can boot from USB**
 
 ---
 
@@ -135,8 +135,8 @@ If you are sure click “Start” button. Please, make sure that you have consta
 
 ![Rufus Interface](images/slide12(1).png)
 
-**step 9)** **Click start button** Wait for nearly 15-20 minutes. After formatting, Rufus will upload your ISO Ubuntu file inside flash memory and you will have this window:
-
+**step 9)** Wait a few minutes on USB 3.x (up to ~15 min on older USB 2.0).  
+When Rufus shows **READY**, your installer stick is done:
 ![Rufus Interface](images/slide12(2).png)
 
 
@@ -214,14 +214,8 @@ In “Device for boot installation” please select your second flash drive. In 
   After you pressed “+” this window appears
 
   Choose settings like in image except memory capacity. You can have capacity more or less than my, so consider this fact and write your own. In mount point always choose “\” option. Click OK after finishing.
-
-  **Step 14)** Now let’s create place for swap. Under /dev/sdb1 you can find another “free space” string. Press on it and set up parameters like in image:
-
-  ![Rufus Interface](images/slide20.png)
-
-Again, memory capacity may differ, in my case it is 2000 MB.
-Then press “OK” if everything is done.
-
+**Step 14)** *Skip manual swap*—Ubuntu 20.04+ creates a swap **file** automatically.  
+ Add a swap partition only if your PC has < 4 GB RAM and you know you need it.
 **Step 15)** After you have done allocating memory, you can check your settings (image below) before approving allocation:
 
 ![Rufus Interface](images/slide21(1).png)
@@ -252,7 +246,10 @@ This process can require time for installing (from 15 minutes to 1 hour). If gen
 
 Please, press “Restart now”.
 
-**Step 21)** After restarting, you will see this image. It means remove two flash drives and press Enter button. Then insert second flash drive (with installed Ubuntu) again.
+**Step 21)** When you see “Remove the installation medium and press ENTER”:  
+ 1. Unplug **only** the installer USB.  
+ 2. **Keep** the main Ubuntu USB inserted.  
+ 3. Press **Enter** – the PC reboots into GRUB on that stick.
 
 ![Rufus Interface](images/slide24(2).png)
 
@@ -267,16 +264,10 @@ Select Ubuntu. It is your Ubuntu installed to your second flash memory stick.
 
 
 ---
-
-## 5️⃣ RST turning off
-
-Small explanation
-
-Why this error appears?
-
-Ubuntu cannot detect your internal storage devices properly when RST is enabled, because RST uses a RAID-like configuration that Linux doesn’t support out of the box. This causes Ubuntu installer to fail in accessing drives or show errors like “no storage device found” or block the installation steps.
-
-Disabling RST (by switching SATA mode to AHCI) fixes this by allowing Ubuntu to interact with drives in a standard-compatible way.
+## 5️⃣  Do I need to disable Intel RST?
+*Usually not for a USB-only install.*  
+RST only blocks **internal-disk** installs.  
+If you later plan to dual-boot onto the laptop’s SSD, switch SATA mode to **AHCI** first; otherwise you can skip this step entirely.
 
 **Step 1)** Please click “quit” (not restart) like in image:
 
@@ -339,7 +330,8 @@ If system is being updated – your Ubuntu works properly.
 
 ## 7️⃣ How to return to Windows OS again?  
 
-If you read manual carefully you remember that we changed parameter SATA mode (Intel RST) from "Optane without RAID" to “AHCI”. This causes errors when you want to launch Windows OS again. Please don’t be afraid, this can be easily corrected. 
+Most Windows 10/11 systems boot fine in **AHCI**.  
+If Windows *does* fail, enter BIOS and switch **AHCI → Optane/RAID**, then be sure “Windows Boot Manager” is at the top of the boot list.
 
 After you turned laptop off, removed flash memory with Ubuntu and powered it up you can receive this image (Grub rescue mode):
 
