@@ -18,7 +18,8 @@ Also, before taking action, please read the instructions first!
 - 2️⃣ Hardware required  
 - 3️⃣ Formatting and writing ISO to a flash drive using Rufus  
 - 4️⃣ Ubuntu installation on second flash drive  
-- 5️⃣ RST turning off  
+- 5️⃣ (Optional) Switch Intel RST to AHCI  
+   *Skip this section if you’re only running Ubuntu from USB.*
 - 6️⃣ Checking Ubuntu for functionality  
 - 7️⃣ How to return to Windows OS again?  
 
@@ -106,7 +107,7 @@ First you need to prepare the first flash drive. For this purpose flash drive mu
 Insert your first flash drive (for ISO only) into a USB port of your laptop or PC.
 
 **step 2)** **Download Ubuntu ISO**  
-Go to [Ubuntu Releases](https://releases.ubuntu.com/focal/) and download the desired version (e.g., Ubuntu 20.04).
+Go to [Ubuntu Releases](https://releases.ubuntu.com/24.04/) and download the desired version (e.g., Ubuntu 24.04).
 
 **step 3)** **Download Rufus**  
 Go to [Rufus Official Website](https://rufus.ie/ru/) and download suitable for you version of **Rufus**.
@@ -175,13 +176,10 @@ There should be:
 - USB stick with ISO image (first flash drive)  
 - Your second flash drive (in my case 64GB Kingston) ← that's where we'll install Ubuntu.
 
- **Step 7)** Return to desktop. Click “Install Ubuntu 20.04 LTS” and in following windows choose next parameters:  
+ **Step 7)** Return to desktop. Click “Install Ubuntu 24.04 LTS” and in following windows choose next parameters:  
 - Language — English  
 - Keyboard layout  
 - Connect Wi-Fi if you want.  
-
-If after Wi-Fi connection you see this (image below), please look at section called “RST turning off”.  
-If not, please continue following instructions.
 
  ![Rufus Interface](images/slide16.png)
 
@@ -192,68 +190,41 @@ If not, please continue following instructions.
 I chose normal installation with downloading updates.  
 Click “Continue” after selecting suitable for you options.
 
+**Step 9)** Choose **Erase disk and install Ubuntu**, select **your USB drive**, confirm → **Install now**.  
+It wipes only the USB; your internal Windows disk stays intact.  
 
- **Step 9)** After step 8 you will see this IMPORTANT screen. Please choose option “Something else”. If you chose “Erase disk and install Ubuntu” it will delete Windows OS! Be careful in this step
-
-  ![Rufus Interface](images/slide17(2).png)
-
-  **Step 10)** We clicked on “Something else” because we want to allocate memory on  second flash memory for correct working. After selecting “Something else” you will see this!
-
-  ![Rufus Interface](images/slide18.png)
-  
-In “Device for boot installation” please select your second flash drive. In my case my flash drive Kingston 64GB is /dev/sdb. Also, you can understand if this is your flash drive by looking at memory capacity. If your memory stick is 64 GB, then in this menu you will see 61991 MB (nearly 64 GB).
-
-**Step 11)** Choose string /dev/sdb  fat32 and press minus sign “-” to delete
-
-**Step 12)** After deleting there will be "free space" under /dev/sdb
-
-**Step 13)** Press on "free space" under /dev/sdb and click plus sign “+”
-
-  ![Rufus Interface](images/slide19.png)
-
-  After you pressed “+” this window appears
-
-  Choose settings like in image except memory capacity. You can have capacity more or less than my, so consider this fact and write your own. In mount point always choose “\” option. Click OK after finishing.
-**Step 14)** *Skip manual swap*—Ubuntu 20.04+ creates a swap **file** automatically.  
- Add a swap partition only if your PC has < 4 GB RAM and you know you need it.
-**Step 15)** After you have done allocating memory, you can check your settings (image below) before approving allocation:
-
-![Rufus Interface](images/slide21(1).png)
-
-If everything is OK, press “Install now”
-
-**Step 16)** After you pressed “Install now”, you see final window. You see how much memory you allocated for Ubuntu. Click “Continue” if you agree:
+**Step 10)** After you click *Install now* the installer shows a summary window. You see how much memory you allocated for Ubuntu. Click “Continue” if you agree:
 
 ![Rufus Interface](images/slide21(2).png)
 
-**Step 17)** After you clicked “Continue” it will ask your time zone. Please select your time zone. In my case I chose Almaty.
+**Step 11)** After you clicked “Continue” it will ask your time zone. Please select your time zone. In my case I chose Almaty.
 
 ![Rufus Interface](images/slide22(1).png)
 
-**Step 18)** Choose name, password and don’t forget them. Go “Continue” after you wrote down name and password. 
+**Step 12)** Choose name, password and don’t forget them. Go “Continue” after you wrote down name and password. 
 
 ![Rufus Interface](images/slide22(2).png)
 
-**Step 19)** After all was set up you will see screen of installation:
+**Step 13)** After all was set up you will see screen of installation:
 
 ![Rufus Interface](images/slide23.png)
 
-This process can require time for installing (from 15 minutes to 1 hour). If generation of USB flash drive is newest, if internet speed is high - installing can be much faster.
+On a USB-3 stick the copy step usually takes **10–20 min** (longer on very slow USB-2 drives).
 
-**Step 20)** After installation complete next window can appear:
+**Step 14)** After installation complete next window can appear:
 
 ![Rufus Interface](images/slide24(1).png)
 
 Please, press “Restart now”.
 
-**Step 21)** When you see “Remove the installation medium and press ENTER”:  
+**Step 15)** When you see “Remove the installation medium and press ENTER”:  
  1. Unplug **only** the installer USB.  
  2. **Keep** the main Ubuntu USB inserted.  
  3. Press **Enter** – the PC reboots into GRUB on that stick.
 
 ![Rufus Interface](images/slide24(2).png)
 
-**Step 22)** After pressing Enter you will see GRUB menu:
+**Step 16)** After pressing Enter you will see GRUB menu:
 
 ![Rufus Interface](images/slide25.png)
 
@@ -264,7 +235,7 @@ Select Ubuntu. It is your Ubuntu installed to your second flash memory stick.
 
 
 ---
-## 5️⃣  Do I need to disable Intel RST?
+## 5️⃣  (Optional) Disable Intel RST (AHCI switch)
 *Usually not for a USB-only install.*  
 RST only blocks **internal-disk** installs.  
 If you later plan to dual-boot onto the laptop’s SSD, switch SATA mode to **AHCI** first; otherwise you can skip this step entirely.
@@ -306,9 +277,9 @@ How to verify if my Ubuntu on second flash drive will work properly?
 - Go in folder Documents or Desktop.
 - Create any file (I created .txt file) and save it
 - Turn off laptop
-- Remove flash memory form your laptop
+- Remove flash memory from your laptop
 - Insert flash memory again
-- Launch Ubuntu from GRUM menu.
+- Launch Ubuntu from GRUB menu.
 - Open “Files” and verify if your created file is there. If yes flash memory with Ubuntu works properly. 
 
 
